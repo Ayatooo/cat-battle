@@ -10,7 +10,6 @@ const RoundRow = ({ round, roundIndex, nextRound }) => {
           const isEven = i % 2 === 0;
           const next = round[i + 1];
 
-          // Pour chaque duel (pair), déterminer le gagnant
           const matchIndex = Math.floor(i / 2);
           const winner = nextRound[matchIndex];
 

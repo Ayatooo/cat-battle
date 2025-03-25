@@ -1,14 +1,12 @@
 import RoundRow from "./RoundRow";
 
 const BracketTree = ({ brackets, styleType }) => {
-  // On calcule quel ordre afficher
   const isInverted = styleType === "inverted";
   const displayedBrackets = isInverted ? brackets : brackets.slice().reverse();
 
   return (
     <div className="flex flex-col gap-12 items-start w-full dark:text-white">
       {displayedBrackets.map((round, displayIndex) => {
-        // On récupère l'index réel dans le tableau original
         const realIndex = isInverted
           ? displayIndex
           : brackets.length - displayIndex - 1;

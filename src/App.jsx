@@ -131,7 +131,6 @@ function App() {
             path="/"
             element={
               <>
-                {/* Controls */}
                 <div className="flex justify-center gap-6 mb-10">
                   <button
                     className="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700"
@@ -163,7 +162,6 @@ function App() {
                   </select>
                 </div>
 
-                {/* Match ou gagnant */}
                 {catWinner ? (
                   <Winner cat={catWinner} />
                 ) : (
@@ -177,7 +175,6 @@ function App() {
                   </div>
                 )}
 
-                {/* Bracket */}
                 <BracketTree brackets={brackets} styleType={style} />
               </>
             }
