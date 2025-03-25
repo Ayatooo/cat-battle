@@ -1,4 +1,4 @@
-const RoundRow = ({ round, roundIndex, nextRound, theme }) => {
+export const RoundRow = ({ round, roundIndex, nextRound, theme }) => {
   return (
     <div className="flex items-center gap-8 w-full relative">
       <h2
@@ -84,5 +84,3 @@ const RoundRow = ({ round, roundIndex, nextRound, theme }) => {
     </div>
   );
 };
-
-export default RoundRow;

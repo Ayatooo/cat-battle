@@ -1,6 +1,6 @@
 import { getGlobalStats } from "../utils/stats";
 
-const Leaderboard = ({ theme }) => {
+export const Leaderboard = ({ theme }) => {
   const stats = getGlobalStats();
 
   return (
@@ -72,4 +72,3 @@ const Leaderboard = ({ theme }) => {
   );
 };
 
-export default Leaderboard;

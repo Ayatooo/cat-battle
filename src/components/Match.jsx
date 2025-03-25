@@ -1,4 +1,4 @@
-const Match = ({ cat, onVote, theme }) => (
+export const Match = ({ cat, onVote, theme }) => (
   <div
     className={`shadow-lg rounded-2xl w-72 hover:shadow-2xl transition duration-300 cursor-pointer ${
       theme === "dark"
@@ -32,4 +32,3 @@ const Match = ({ cat, onVote, theme }) => (
   </div>
 );
 
-export default Match;

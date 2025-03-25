@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import confetti from "canvas-confetti";
-import cats from "./data/cats";
-import Match from "./components/Match";
-import Winner from "./components/Winner";
-import BracketTree from "./components/BracketTree";
-import Leaderboard from "./components/Leaderboard";
+import { cats } from "./data/cats";
+import { Match } from "./components/Match";
+import { Winner } from "./components/Winner";
+import { BracketTree } from "./components/BracketTree";
+import { Leaderboard } from "./components/Leaderboard";
 
-function App() {
+export function App() {
   const [catWinner, setCatWinner] = useState(null);
   const [brackets, setBrackets] = useState([shuffleArray(cats)]);
   const [currentRoundIndex, setCurrentRoundIndex] = useState(0);
@@ -214,5 +214,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

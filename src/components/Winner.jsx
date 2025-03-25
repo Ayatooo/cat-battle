@@ -1,4 +1,4 @@
-const Winner = ({ cat, theme }) => (
+export const Winner = ({ cat, theme }) => (
   <div className="flex flex-col items-center mb-10">
     <h2
       className={`text-2xl font-semibold mb-4 ${
@@ -31,5 +31,3 @@ const Winner = ({ cat, theme }) => (
     </p>
   </div>
 );
-
-export default Winner;

@@ -1,6 +1,6 @@
-import RoundRow from "./RoundRow";
+import { RoundRow } from "./RoundRow";
 
-const BracketTree = ({ brackets, styleType, theme }) => {
+export const BracketTree = ({ brackets, styleType, theme }) => {
   const isInverted = styleType === "inverted";
   const displayedBrackets = isInverted ? brackets : brackets.slice().reverse();
 
@@ -28,5 +28,3 @@ const BracketTree = ({ brackets, styleType, theme }) => {
     </div>
   );
 };
-
-export default BracketTree;

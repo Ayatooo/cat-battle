@@ -1,4 +1,4 @@
-const cats = [
+export const cats = [
   { id: 1, name: "Mittens", image: "/img/cats/cat1.jpg" },
   { id: 2, name: "Whiskers", image: "/img/cats/cat2.jpg" },
   { id: 3, name: "Luna", image: "/img/cats/cat3.jpg" },
@@ -16,5 +16,3 @@ const cats = [
   { id: 15, name: "Loki", image: "/img/cats/cat15.jpg" },
   { id: 16, name: "Zelda", image: "/img/cats/cat16.jpg" },
 ];
-
-export default cats;
