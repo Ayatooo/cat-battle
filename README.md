@@ -46,3 +46,7 @@ npm run build
 Pour prévisualiser :
 
 npm run preview
+
+## 🚀 Application en ligne
+
+L'application est disponible en ligne sur Vercel : [Battle de Chats](https://cat-battle-one.vercel.app/)
