@@ -1,7 +1,15 @@
-const RoundRow = ({ round, roundIndex, nextRound }) => {
+const RoundRow = ({ round, roundIndex, nextRound, theme }) => {
   return (
     <div className="flex items-center gap-8 w-full relative">
-      <h2 className="text-md font-semibold text-gray-700 min-w-[80px]">
+      <h2
+        className={`text-md font-semibold min-w-[80px] ${
+          theme === "dark"
+            ? "text-white"
+            : theme === "pixel"
+            ? "text-gray-900"
+            : "text-gray-800"
+        }`}
+      >
         Round {roundIndex + 1}
       </h2>
 
@@ -20,8 +28,18 @@ const RoundRow = ({ round, roundIndex, nextRound }) => {
               <div className="flex flex-col items-center">
                 <div
                   className={`w-20 h-20 rounded-full border-4 overflow-hidden shadow-sm ${
-                    isWinner ? "border-green-500" : "border-gray-300"
-                  } bg-white`}
+                    isWinner
+                      ? "border-green-500"
+                      : theme === "dark"
+                      ? "border-gray-600"
+                      : "border-gray-300"
+                  } ${
+                    theme === "dark"
+                      ? "bg-gray-800"
+                      : theme === "pixel"
+                      ? "bg-pink-100"
+                      : "bg-white"
+                  }`}
                 >
                   {cat ? (
                     <img
@@ -30,18 +48,34 @@ const RoundRow = ({ round, roundIndex, nextRound }) => {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center text-xs text-gray-400">
+                    <div
+                      className={`w-full h-full flex items-center justify-center text-xs ${
+                        theme === "dark" ? "text-gray-400" : "text-gray-500"
+                      }`}
+                    >
                       ?
                     </div>
                   )}
                 </div>
-                <p className="text-sm mt-2 text-gray-700 text-center w-20">
+                <p
+                  className={`text-sm mt-2 text-center w-20 ${
+                    theme === "dark"
+                      ? "text-white"
+                      : theme === "pixel"
+                      ? "text-gray-900"
+                      : "text-gray-800"
+                  }`}
+                >
                   {cat ? cat.name : "En attente"}
                 </p>
               </div>
 
               {isEven && next && (
-                <div className="absolute top-1/2 left-full h-0.5 w-10 bg-gray-400 translate-y-[-50%]"></div>
+                <div
+                  className={`absolute top-1/2 left-full h-0.5 w-10 translate-y-[-50%] ${
+                    theme === "dark" ? "bg-gray-600" : "bg-gray-400"
+                  }`}
+                ></div>
               )}
             </div>
           );

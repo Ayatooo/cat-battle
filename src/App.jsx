@@ -101,26 +101,37 @@ function App() {
       <div
         className={`min-h-screen p-6 ${
           theme === "dark"
-            ? "bg-gray-900 text-white"
+            ? "bg-gray-900"
             : theme === "pixel"
-            ? "bg-pink-200 text-black font-mono"
-            : "bg-gray-100 text-gray-800"
+            ? "bg-pink-200"
+            : "bg-white"
         }`}
         onDrop={handleFileDrop}
         onDragOver={(e) => e.preventDefault()}
       >
-        <h1 className="text-4xl font-bold text-center mb-6">
+        <h1
+          className={`text-4xl font-bold text-center mb-6 ${
+            theme === "dark" ? "text-white" : "text-gray-900"
+          }`}
+        >
           🐱 Battle de Chats
         </h1>
 
         {/* Navigation */}
         <div className="flex justify-center gap-6 mb-6">
-          <Link to="/" className="text-blue-600 font-semibold underline">
+          <Link
+            to="/"
+            className={`font-semibold underline ${
+              theme === "dark" ? "text-blue-400" : "text-blue-600"
+            }`}
+          >
             Tournoi
           </Link>
           <Link
             to="/classement"
-            className="text-blue-600 font-semibold underline"
+            className={`font-semibold underline ${
+              theme === "dark" ? "text-blue-400" : "text-blue-600"
+            }`}
           >
             Classement
           </Link>
@@ -142,7 +153,11 @@ function App() {
                   <select
                     value={theme}
                     onChange={(e) => setTheme(e.target.value)}
-                    className="px-3 py-2 rounded border"
+                    className={`px-3 py-2 rounded border ${
+                      theme === "dark"
+                        ? "bg-gray-800 text-white border-gray-700"
+                        : "bg-white text-gray-900 border-gray-300"
+                    }`}
                   >
                     <option value="light">🌞 Clair</option>
                     <option value="dark">🌚 Sombre</option>
@@ -152,7 +167,11 @@ function App() {
                   <select
                     value={style}
                     onChange={(e) => setStyle(e.target.value)}
-                    className="px-3 py-2 rounded border"
+                    className={`px-3 py-2 rounded border ${
+                      theme === "dark"
+                        ? "bg-gray-800 text-white border-gray-700"
+                        : "bg-white text-gray-900 border-gray-300"
+                    }`}
                   >
                     <option value="classic">🏛️ Classique</option>
                     <option value="inverted">🔃 Inversé</option>
@@ -163,24 +182,33 @@ function App() {
                 </div>
 
                 {catWinner ? (
-                  <Winner cat={catWinner} />
+                  <Winner cat={catWinner} theme={theme} />
                 ) : (
                   <div className="flex justify-center flex-wrap gap-10 mb-16">
                     {[catA, catB].map(
                       (cat) =>
                         cat && (
-                          <Match key={cat.id} cat={cat} onVote={handleVote} />
+                          <Match
+                            key={cat.id}
+                            cat={cat}
+                            onVote={handleVote}
+                            theme={theme}
+                          />
                         )
                     )}
                   </div>
                 )}
 
-                <BracketTree brackets={brackets} styleType={style} />
+                <BracketTree
+                  brackets={brackets}
+                  styleType={style}
+                  theme={theme}
+                />
               </>
             }
           />
 
-          <Route path="/classement" element={<Leaderboard />} />
+          <Route path="/classement" element={<Leaderboard theme={theme} />} />
         </Routes>
       </div>
     </Router>

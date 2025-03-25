@@ -1,6 +1,6 @@
 import RoundRow from "./RoundRow";
 
-const BracketTree = ({ brackets, styleType }) => {
+const BracketTree = ({ brackets, styleType, theme }) => {
   const isInverted = styleType === "inverted";
   const displayedBrackets = isInverted ? brackets : brackets.slice().reverse();
 
@@ -21,6 +21,7 @@ const BracketTree = ({ brackets, styleType }) => {
             roundIndex={realIndex}
             nextRound={nextRound}
             isLastRound={isLastRound}
+            theme={theme}
           />
         );
       })}
