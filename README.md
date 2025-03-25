@@ -10,10 +10,7 @@ Une application React fun où 16 chats s'affrontent en duel jusqu'à ce qu'il n'
 
 ## 📦 Installation
 
-1. Cloner le dépôt :
-
-   git clone https://github.com/ton-utilisateur/battle-de-chats.git
-   cd battle-de-chats
+1. Cloner le dépôt puis taper cd battle-de-chats dans le terminal
 
 2. Installer les dépendances :
 
