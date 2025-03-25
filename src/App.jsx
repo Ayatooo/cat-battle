@@ -150,35 +150,57 @@ export function App() {
                     🔁 Nouveau tournoi
                   </button>
 
-                  <select
-                    value={theme}
-                    onChange={(e) => setTheme(e.target.value)}
-                    className={`px-3 py-2 rounded border ${
-                      theme === "dark"
-                        ? "bg-gray-800 text-white border-gray-700"
-                        : "bg-white text-gray-900 border-gray-300"
-                    }`}
-                  >
-                    <option value="light">🌞 Clair</option>
-                    <option value="dark">🌚 Sombre</option>
-                    <option value="pixel">🕹️ Pixel Art</option>
-                  </select>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="theme-select"
+                      className={`text-s mb-1 ${
+                        theme === "dark" ? "text-white" : "text-gray-700"
+                      }`}
+                    >
+                      Thème du jeu
+                    </label>
+                    <select
+                      id="theme-select"
+                      value={theme}
+                      onChange={(e) => setTheme(e.target.value)}
+                      className={`px-3 py-2 rounded border ${
+                        theme === "dark"
+                          ? "bg-gray-800 text-white border-gray-700"
+                          : "bg-white text-gray-900 border-gray-300"
+                      }`}
+                    >
+                      <option value="light">🌞 Clair</option>
+                      <option value="dark">🌚 Sombre</option>
+                      <option value="pixel">🕹️ Pixel Art</option>
+                    </select>
+                  </div>
 
-                  <select
-                    value={style}
-                    onChange={(e) => setStyle(e.target.value)}
-                    className={`px-3 py-2 rounded border ${
-                      theme === "dark"
-                        ? "bg-gray-800 text-white border-gray-700"
-                        : "bg-white text-gray-900 border-gray-300"
-                    }`}
-                  >
-                    <option value="classic">🏛️ Classique</option>
-                    <option value="inverted">🔃 Inversé</option>
-                    <option value="circular" disabled>
-                      🔄 Circulaire (bientôt)
-                    </option>
-                  </select>
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="style-select"
+                      className={`text-s mb-1 ${
+                        theme === "dark" ? "text-white" : "text-gray-700"
+                      }`}
+                    >
+                      Style d'affichage des rounds
+                    </label>
+                    <select
+                      id="style-select"
+                      value={style}
+                      onChange={(e) => setStyle(e.target.value)}
+                      className={`px-3 py-2 rounded border ${
+                        theme === "dark"
+                          ? "bg-gray-800 text-white border-gray-700"
+                          : "bg-white text-gray-900 border-gray-300"
+                      }`}
+                    >
+                      <option value="classic">🏛️ Classique</option>
+                      <option value="inverted">🔃 Inversé</option>
+                      <option value="circular" disabled>
+                        🔄 Circulaire (bientôt)
+                      </option>
+                    </select>
+                  </div>
                 </div>
 
                 {catWinner ? (
