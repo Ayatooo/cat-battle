@@ -1,4 +1,4 @@
-# 🐱 Battle de Chats
+# 🐱 Battle de Chats by Reynard Louis & Dinville Mattéo
 
 Une application React fun où 16 chats s'affrontent en duel jusqu'à ce qu'il n'en reste qu'un : le grand gagnant ! 😼🏆
 
